@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-caslon);
+  --color-cream: #fbf7f2;
+  --color-cream-2: #e6ded4;
+  --color-taupe: #c4ae92;
+  --color-brown: #7a5c46;
+  --color-brown-soft: #9a7a60;
+  --color-forest: #2c463d;
+  --color-sage: #6b7f5c;
+  --color-ivory: #fff8ec;
+  --color-contrast: #ddbb90;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-brown);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #ddbb90;
+  color: #2c463d;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-width {
+  width: min(1360px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+@media (max-width: 749px) {
+  .page-width {
+    width: min(1360px, calc(100% - 1.5rem));
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif), "Times New Roman", serif;
+}
+
+.display {
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--color-brown);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #684d3b;
+}
+
+.btn-ivory {
+  background: var(--color-ivory);
+  color: var(--color-forest);
+}
+
+.btn-ivory:hover {
+  background: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-brown);
+  border: 1px solid var(--color-brown);
+}
+
+.btn-outline:hover {
+  background: var(--color-brown);
+  color: #fff;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #c4ae92;
+  background: #fff;
+  color: var(--color-brown);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  border-radius: 2px;
+}
+
+.input:focus {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 1px;
+}
+
+.input::placeholder {
+  color: #9a7a60;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
