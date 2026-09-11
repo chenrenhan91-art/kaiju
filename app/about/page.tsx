@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { COMPANY } from "@/lib/company";
+import { asset } from "@/lib/asset";
 
 export const metadata = { title: "About Us" };
 
@@ -16,7 +17,7 @@ export default function AboutPage() {
 
       <section className="page-width grid md:grid-cols-2 gap-10 pb-16 items-center">
         <div className="relative aspect-[4/3] bg-cream-2">
-          <Image src="/images/about-workshop.png" alt="Workshop table with hardwood boards" fill className="object-cover" />
+          <Image src={asset("/images/about-workshop.png")} alt="Workshop table with hardwood boards" fill className="object-cover" />
         </div>
         <div>
           <h2 className="display text-3xl">How we work</h2>
@@ -39,7 +40,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative aspect-[4/3] bg-cream">
-            <Image src="/images/about-grain.png" alt="Close walnut and cherry grain" fill className="object-cover" />
+            <Image src={asset("/images/about-grain.png")} alt="Close walnut and cherry grain" fill className="object-cover" />
           </div>
         </div>
       </section>

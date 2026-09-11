@@ -1,6 +1,7 @@
 import type { Collection, Product } from "./types";
+import { asset } from "./asset";
 
-const img = (file: string) => `/images/${file}`;
+const img = (file: string) => asset(`/images/${file}`);
 
 function product(
   handle: string,

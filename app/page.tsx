@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/ssr";
 import { ProductCard } from "@/components/ProductCard";
+import { asset } from "@/lib/asset";
 import {
   combFeatured,
   collections,
@@ -27,7 +28,7 @@ export default function HomePage() {
     <>
       <section className="relative min-h-[500px] md:min-h-[660px] text-ivory">
         <Image
-          src="/images/hero-banner.png"
+          src={asset("/images/hero-banner.png")}
           alt="Wooden jewelry boxes and vanity pieces arranged on a sunlit dressing table"
           fill
           priority
@@ -155,7 +156,7 @@ export default function HomePage() {
       <section className="pb-16">
         <div className="page-width grid md:grid-cols-2 gap-8 items-center">
           <div className="relative aspect-[3/2] bg-cream-2">
-            <Image src="/images/about-workshop.png" alt="Hardwood boards and tools on a workshop table" fill className="object-cover" />
+            <Image src={asset("/images/about-workshop.png")} alt="Hardwood boards and tools on a workshop table" fill className="object-cover" />
           </div>
           <div className="max-w-md md:px-6">
             <p className="text-[17px] leading-relaxed">

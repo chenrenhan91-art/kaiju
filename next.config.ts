@@ -1,13 +1,16 @@
 import type { NextConfig } from "next";
 
-const onGithubPages = process.env.GITHUB_PAGES === "true";
+const basePath = process.env.GITHUB_PAGES === "true" ? "/kaiju" : "";
 
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
-  basePath: onGithubPages ? "/kaiju" : "",
-  assetPrefix: onGithubPages ? "/kaiju" : "",
+  basePath,
+  assetPrefix: basePath || undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;
