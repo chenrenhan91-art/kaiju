@@ -2,7 +2,7 @@ import { COMPANY } from "./company";
 import { money } from "./format";
 import type { OrderRecord } from "./types";
 
-export function companyMailto(subject: string, body: string) {
+export function companyMailto(subject: string, body: string): string {
   return `${COMPANY.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 

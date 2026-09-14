@@ -6,7 +6,7 @@ import { inquiryMailto } from "@/lib/notify";
 
 export default function BulkOrderPage() {
   const [sent, setSent] = useState(false);
-  const [mailHref, setMailHref] = useState(COMPANY.emailHref);
+  const [mailHref, setMailHref] = useState<string>(COMPANY.emailHref);
 
   return (
     <div className="page-width py-14 max-w-2xl">
