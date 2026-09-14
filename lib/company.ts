@@ -3,8 +3,8 @@ export const COMPANY = {
   legalName: "KAIJU TRADE LIMITED",
   phone: "+852 96915375",
   phoneHref: "tel:+85296915375",
-  email: "kinopaymen@outlook.com",
-  emailHref: "mailto:kinopaymen@outlook.com",
+  email: "kinopayment@outlook.com",
+  emailHref: "mailto:kinopayment@outlook.com",
   addressLines: [
     "RM F18, WORKSHOP 8, 11/F, WALNUT 9",
     "9 WALNUT STREET",
