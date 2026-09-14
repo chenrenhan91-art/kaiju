@@ -36,7 +36,7 @@ const pages: Record<string, { title: string; body: string[] }> = {
     title: "Privacy Policy",
     body: [
       "We collect the name, phone number, optional email, and shipping address you type at checkout so we can confirm and ship your order.",
-      `Our company inbox is ${COMPANY.email}. Order copies stored in this browser stay on your device; a copy of checkout and bulk inquiries is also sent to that inbox.`,
+      `Our company inbox is ${COMPANY.email}. Order copies stored in this browser stay on your device. You can email a copy to that inbox from checkout or the bulk-order form.`,
       "We do not sell personal information.",
       `Contact: ${COMPANY.legalName}, ${COMPANY.addressLines.join(", ")}, ${COMPANY.phone}, ${COMPANY.email}.`,
     ],

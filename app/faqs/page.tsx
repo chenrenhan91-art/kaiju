@@ -81,7 +81,7 @@ const groups = [
     items: [
       {
         q: "Do you store my details?",
-        a: `Checkout details stay in your browser on this device so you can review the order. A copy of the request is also sent to ${COMPANY.email}. We use the phone number and email you provide only to confirm and ship your order.`,
+        a: `Checkout details stay in your browser on this device so you can review the order. After checkout you can email the order to ${COMPANY.email} from your own mail app. We use the phone number and email you provide only to confirm and ship your order.`,
       },
     ],
   },

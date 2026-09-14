@@ -6,6 +6,7 @@ import { Suspense, useEffect, useState } from "react";
 import { COMPANY } from "@/lib/company";
 import { loadLastOrder } from "@/lib/cart";
 import { money } from "@/lib/format";
+import { orderMailto } from "@/lib/notify";
 import type { OrderRecord } from "@/lib/types";
 
 function ConfirmedBody() {
@@ -32,11 +33,16 @@ function ConfirmedBody() {
     <div className="page-width py-14 max-w-2xl">
       <h1 className="display text-4xl">Order received</h1>
       <p className="mt-4 leading-relaxed">
-        Thank you, {order.name}. Your request {order.id} is saved. We will call {order.phone}
-        {order.email ? ` or email ${order.email}` : ""} to confirm stock and payment. You can also
-        reach us at {COMPANY.phone} or{" "}
-        <a href={COMPANY.emailHref} className="underline break-all">
-          {COMPANY.email}
+        Thank you, {order.name}. Your request {order.id} is saved on this device. Email it to us so
+        we can confirm stock and payment, or wait for a call at {order.phone}.
+      </p>
+      <a href={orderMailto(order)} className="btn btn-primary mt-6">
+        Email this order to {COMPANY.email}
+      </a>
+      <p className="mt-4 text-sm text-brown-soft">
+        That opens your email app with our inbox already filled in. You can also call{" "}
+        <a href={COMPANY.phoneHref} className="underline">
+          {COMPANY.phone}
         </a>
         .
       </p>

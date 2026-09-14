@@ -8,7 +8,6 @@ import { COMPANY } from "@/lib/company";
 import { getProduct } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 import { money } from "@/lib/format";
-import { notifyCompany, orderNotificationFields } from "@/lib/notify";
 
 export default function CheckoutPage() {
   const { lines, subtotal, placeOrder } = useCart();
@@ -51,18 +50,16 @@ export default function CheckoutPage() {
             promoCode: applied,
             discountPercent,
           });
-          void notifyCompany(orderNotificationFields(order));
           router.push(`/order/confirmed?id=${order.id}`);
         }}
       >
         <h1 className="display text-4xl">Checkout</h1>
         <p className="text-sm leading-relaxed text-brown-soft">
-          No online payment on this site. After you submit, we call or email you to confirm stock
-          and share payment instructions. Company line: {COMPANY.phone}. Inbox:{" "}
+          No online payment on this site. After you submit, email the order to{" "}
           <a href={COMPANY.emailHref} className="underline break-all">
             {COMPANY.email}
-          </a>
-          .
+          </a>{" "}
+          from the next screen, or wait for our call. Company line: {COMPANY.phone}.
         </p>
         <label className="grid gap-2 text-sm">
           Full name

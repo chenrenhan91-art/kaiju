@@ -1,40 +1,48 @@
 import { COMPANY } from "./company";
+import { money } from "./format";
 import type { OrderRecord } from "./types";
 
-export async function notifyCompany(fields: Record<string, string>) {
-  try {
-    const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(COMPANY.email)}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        _template: "table",
-        _captcha: "false",
-        ...fields,
-      }),
-    });
-    return res.ok;
-  } catch {
-    return false;
-  }
+export function companyMailto(subject: string, body: string) {
+  return `${COMPANY.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-export function orderNotificationFields(order: OrderRecord) {
-  return {
-    _subject: `KAIJU order ${order.id}`,
-    order_id: order.id,
-    name: order.name,
-    phone: order.phone,
-    email: order.email || "(not provided)",
-    country: order.country,
-    address: order.address,
-    city: order.city,
-    postal: order.postal,
-    notes: order.notes || "(none)",
-    promo: order.promoCode || "(none)",
-    total_usd: String(order.total),
-    items: order.lines.map((line) => `${line.title} × ${line.quantity} ($${line.price})`).join("; "),
-  };
+export function orderMailto(order: OrderRecord) {
+  const items = order.lines
+    .map((line) => `${line.title} × ${line.quantity} — ${money(line.price * line.quantity)}`)
+    .join("\n");
+  const body = [
+    `Order ${order.id}`,
+    `Name: ${order.name}`,
+    `Phone: ${order.phone}`,
+    `Email: ${order.email || "-"}`,
+    `Country: ${order.country}`,
+    `Address: ${order.address}`,
+    `City: ${order.city}`,
+    `Postal: ${order.postal}`,
+    `Notes: ${order.notes || "-"}`,
+    `Promo: ${order.promoCode || "-"}`,
+    `Total: ${money(order.total)}`,
+    "",
+    "Items:",
+    items,
+  ].join("\n");
+  return companyMailto(`KAIJU order ${order.id}`, body);
+}
+
+export function inquiryMailto(input: {
+  name: string;
+  phone: string;
+  email: string;
+  company: string;
+  message: string;
+}) {
+  const body = [
+    `Name: ${input.name}`,
+    `Phone: ${input.phone}`,
+    `Email: ${input.email || "-"}`,
+    `Company: ${input.company || "-"}`,
+    "",
+    input.message,
+  ].join("\n");
+  return companyMailto("KAIJU bulk order inquiry", body);
 }
