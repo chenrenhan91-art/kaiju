@@ -61,7 +61,7 @@ export default function CartPage() {
               <span>{money(subtotal)}</span>
             </div>
             <p className="text-sm mt-3 text-brown-soft">
-              Shipping is included. Payment is arranged after we confirm the order by phone.
+              Shipping is included. Payment is arranged after we confirm the order by phone or email.
             </p>
             <Link href="/checkout" className="btn btn-primary w-full mt-6">
               Check out

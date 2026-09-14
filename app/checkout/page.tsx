@@ -8,6 +8,7 @@ import { COMPANY } from "@/lib/company";
 import { getProduct } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 import { money } from "@/lib/format";
+import { notifyCompany, orderNotificationFields } from "@/lib/notify";
 
 export default function CheckoutPage() {
   const { lines, subtotal, placeOrder } = useCart();
@@ -41,6 +42,7 @@ export default function CheckoutPage() {
           const order = placeOrder({
             name: String(data.get("name") || ""),
             phone: String(data.get("phone") || ""),
+            email: String(data.get("email") || "").trim(),
             country: String(data.get("country") || ""),
             address: String(data.get("address") || ""),
             city: String(data.get("city") || ""),
@@ -49,13 +51,18 @@ export default function CheckoutPage() {
             promoCode: applied,
             discountPercent,
           });
+          void notifyCompany(orderNotificationFields(order));
           router.push(`/order/confirmed?id=${order.id}`);
         }}
       >
         <h1 className="display text-4xl">Checkout</h1>
         <p className="text-sm leading-relaxed text-brown-soft">
-          No online payment on this site. After you submit, we call the phone number below to confirm
-          stock and share payment instructions. Company line: {COMPANY.phone}.
+          No online payment on this site. After you submit, we call or email you to confirm stock
+          and share payment instructions. Company line: {COMPANY.phone}. Inbox:{" "}
+          <a href={COMPANY.emailHref} className="underline break-all">
+            {COMPANY.email}
+          </a>
+          .
         </p>
         <label className="grid gap-2 text-sm">
           Full name
@@ -64,6 +71,10 @@ export default function CheckoutPage() {
         <label className="grid gap-2 text-sm">
           Phone
           <input required name="phone" type="tel" className="input" autoComplete="tel" />
+        </label>
+        <label className="grid gap-2 text-sm">
+          Email (optional)
+          <input name="email" type="email" className="input" autoComplete="email" />
         </label>
         <label className="grid gap-2 text-sm">
           Country / region

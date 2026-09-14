@@ -39,6 +39,7 @@ export type OrderRecord = {
   createdAt: string;
   name: string;
   phone: string;
+  email?: string;
   country: string;
   address: string;
   city: string;

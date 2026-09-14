@@ -16,7 +16,7 @@ export function TrustBar() {
     {
       icon: Phone,
       title: "Phone-Confirmed Orders",
-      text: `We confirm stock and payment by phone at ${COMPANY.phone}.`,
+      text: `We confirm stock and payment by phone at ${COMPANY.phone} or email ${COMPANY.email}.`,
     },
   ];
   return (

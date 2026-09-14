@@ -8,9 +8,9 @@ const pages: Record<string, { title: string; body: string[] }> = {
   payment: {
     title: "Payment Methods",
     body: [
-      "This website does not charge cards in the browser. After you submit checkout, KAIJU TRADE LIMITED calls the phone number on the order to confirm stock, shipping, and payment.",
+      "This website does not charge cards in the browser. After you submit checkout, KAIJU TRADE LIMITED calls or emails you to confirm stock, shipping, and payment.",
       "Bank transfer is the default. Card payment can be arranged on that call if needed.",
-      `Questions: ${COMPANY.phone}.`,
+      `Questions: ${COMPANY.phone} or ${COMPANY.email}.`,
     ],
   },
   shipping: {
@@ -18,37 +18,37 @@ const pages: Record<string, { title: string; body: string[] }> = {
     body: [
       "Tracked shipping is included on every order.",
       "Parcels ship from Hong Kong after payment is confirmed. International transit times vary by destination and customs.",
-      "You receive a tracking number by phone or text once the carrier has the parcel.",
-      `Questions: ${COMPANY.phone}.`,
+      "You receive a tracking number by phone, email, or text once the carrier has the parcel.",
+      `Questions: ${COMPANY.phone} or ${COMPANY.email}.`,
     ],
   },
   returns: {
     title: "Return & Refund Policy",
     body: [
       "Unused items in original packing may be returned or exchanged within 60 days of delivery.",
-      "Call us before sending anything back so we can issue a return reference.",
+      "Call or email us before sending anything back so we can issue a return reference.",
       "If we sent the wrong item or it arrived damaged, we cover return shipping. Otherwise return shipping is the buyer’s responsibility.",
       "Refunds go back by the same method used for payment, after we inspect the return.",
-      `Questions: ${COMPANY.phone}.`,
+      `Questions: ${COMPANY.phone} or ${COMPANY.email}.`,
     ],
   },
   privacy: {
     title: "Privacy Policy",
     body: [
-      "We collect the name, phone number, and shipping address you type at checkout so we can confirm and ship your order.",
-      "We do not publish or collect a company email address. Order copies stored in this browser stay on your device.",
+      "We collect the name, phone number, optional email, and shipping address you type at checkout so we can confirm and ship your order.",
+      `Our company inbox is ${COMPANY.email}. Order copies stored in this browser stay on your device; a copy of checkout and bulk inquiries is also sent to that inbox.`,
       "We do not sell personal information.",
-      `Contact: ${COMPANY.legalName}, ${COMPANY.addressLines.join(", ")}, ${COMPANY.phone}.`,
+      `Contact: ${COMPANY.legalName}, ${COMPANY.addressLines.join(", ")}, ${COMPANY.phone}, ${COMPANY.email}.`,
     ],
   },
   terms: {
     title: "Terms of Service",
     body: [
       `The KAIJU storefront is operated by ${COMPANY.legalName}, Hong Kong.`,
-      "Submitting checkout is a request to buy, not a completed sale. The contract forms when we confirm the order and payment by phone.",
+      "Submitting checkout is a request to buy, not a completed sale. The contract forms when we confirm the order and payment by phone or email.",
       "Product photos are representative. Wood grain and inlay vary from piece to piece.",
       "Hong Kong law governs these terms.",
-      `Questions: ${COMPANY.phone}.`,
+      `Questions: ${COMPANY.phone} or ${COMPANY.email}.`,
     ],
   },
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChatCircle, Phone } from "@phosphor-icons/react";
+import { ChatCircle, EnvelopeSimple, Phone } from "@phosphor-icons/react";
 import { COMPANY } from "@/lib/company";
 import { footerPolicies, footerShop, footerSupport } from "@/lib/nav";
 
@@ -53,11 +53,16 @@ export function Footer() {
           <div>
             <p className="font-bold mb-3">Need any advice before you buy?</p>
             <p className="text-[14px] leading-relaxed mb-4">
-              We confirm orders by phone. Call us with questions about wood, size, or shipping.
+              We confirm orders by phone or email. Write or call with questions about wood, size, or
+              shipping.
             </p>
             <a href={COMPANY.phoneHref} className="btn btn-primary w-full">
               <Phone size={18} />
               {COMPANY.phone}
+            </a>
+            <a href={COMPANY.emailHref} className="btn btn-outline w-full mt-3 break-all">
+              <EnvelopeSimple size={18} className="shrink-0" />
+              {COMPANY.email}
             </a>
             <p className="mt-6 text-[13px] leading-relaxed whitespace-pre-line">
               {COMPANY.legalName}
@@ -71,7 +76,7 @@ export function Footer() {
         <div className="page-width flex flex-col md:flex-row md:items-center gap-3 py-5 text-[13px]">
           <ChatCircle size={18} />
           <p>
-            Questions about a piece? Call {COMPANY.phone}. We do not collect email.
+            Questions about a piece? Call {COMPANY.phone} or email {COMPANY.email}.
           </p>
         </div>
       </div>

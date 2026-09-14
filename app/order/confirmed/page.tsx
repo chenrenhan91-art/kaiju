@@ -32,8 +32,13 @@ function ConfirmedBody() {
     <div className="page-width py-14 max-w-2xl">
       <h1 className="display text-4xl">Order received</h1>
       <p className="mt-4 leading-relaxed">
-        Thank you, {order.name}. Your request {order.id} is saved. We will call {order.phone} to
-        confirm stock and payment. You can also reach us at {COMPANY.phone}.
+        Thank you, {order.name}. Your request {order.id} is saved. We will call {order.phone}
+        {order.email ? ` or email ${order.email}` : ""} to confirm stock and payment. You can also
+        reach us at {COMPANY.phone} or{" "}
+        <a href={COMPANY.emailHref} className="underline break-all">
+          {COMPANY.email}
+        </a>
+        .
       </p>
       <ul className="mt-8 grid gap-3 text-sm">
         {order.lines.map((line) => (

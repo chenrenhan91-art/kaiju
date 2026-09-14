@@ -7,8 +7,12 @@ const groups = [
     title: "Ordering & Discounts",
     items: [
       {
+        q: "How do I contact KAIJU?",
+        a: `Call ${COMPANY.phone} or email ${COMPANY.email}. We confirm orders on the phone number or email you leave at checkout.`,
+      },
+      {
         q: "How do I place an order?",
-        a: "Add pieces to your cart and complete the checkout form with your name, phone, and shipping address. We then call you to confirm stock and payment. There is no online card checkout.",
+        a: "Add pieces to your cart and complete the checkout form with your name, phone, email if you have one, and shipping address. We then call or email you to confirm stock and payment. There is no online card checkout.",
       },
       {
         q: `How does the ${COMPANY.promoCode} code work?`,
@@ -16,7 +20,7 @@ const groups = [
       },
       {
         q: "Can I change or cancel an order?",
-        a: `Call ${COMPANY.phone} as soon as you can. If the parcel has not been packed, we can usually change or cancel it.`,
+        a: `Call ${COMPANY.phone} or email ${COMPANY.email} as soon as you can. If the parcel has not been packed, we can usually change or cancel it.`,
       },
     ],
   },
@@ -25,7 +29,7 @@ const groups = [
     items: [
       {
         q: "How do I pay?",
-        a: "After we confirm your order by phone, we share payment instructions. Bank transfer is the default. Card payment can be arranged on that call.",
+        a: "After we confirm your order by phone or email, we share payment instructions. Bank transfer is the default. Card payment can be arranged on that call.",
       },
       {
         q: "When is payment due?",
@@ -46,7 +50,7 @@ const groups = [
       },
       {
         q: "How can I track my order?",
-        a: "We send the tracking number by phone or text once the parcel is handed to the carrier.",
+        a: "We send the tracking number by phone, email, or text once the parcel is handed to the carrier.",
       },
     ],
   },
@@ -55,7 +59,7 @@ const groups = [
     items: [
       {
         q: "Can I return or exchange items?",
-        a: "Eligible unused items can be returned or exchanged within 60 days. Call us first so we can issue a return reference. Buyer is responsible for return shipping unless the item arrived damaged or incorrect.",
+        a: "Eligible unused items can be returned or exchanged within 60 days. Call or email us first so we can issue a return reference. Buyer is responsible for return shipping unless the item arrived damaged or incorrect.",
       },
     ],
   },
@@ -77,7 +81,7 @@ const groups = [
     items: [
       {
         q: "Do you store my details?",
-        a: "Checkout details stay in your browser on this device so you can review the order. We use the phone number you provide only to confirm and ship your order.",
+        a: `Checkout details stay in your browser on this device so you can review the order. A copy of the request is also sent to ${COMPANY.email}. We use the phone number and email you provide only to confirm and ship your order.`,
       },
     ],
   },

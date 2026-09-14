@@ -76,7 +76,7 @@ export function CartDrawer() {
             <span>Subtotal</span>
             <span>{money(subtotal)}</span>
           </div>
-          <p className="text-xs text-brown-soft">Shipping and payment are confirmed by phone after you place the order.</p>
+          <p className="text-xs text-brown-soft">Shipping and payment are confirmed by phone or email after you place the order.</p>
           <Link href="/cart" className="btn btn-outline" onClick={() => setDrawerOpen(false)}>
             View cart
           </Link>

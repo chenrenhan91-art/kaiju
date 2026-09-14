@@ -23,8 +23,8 @@ export default function AboutPage() {
           <h2 className="display text-3xl">How we work</h2>
           <p className="mt-4 leading-relaxed">
             Pieces are inspected for finish, structure, and function, then packed before they leave.
-            Orders are reviewed daily. We confirm each order by phone so size, wood, and shipping
-            details are clear before payment.
+            Orders are reviewed daily. We confirm each order by phone or email so size, wood, and
+            shipping details are clear before payment.
           </p>
         </div>
       </section>
@@ -58,13 +58,18 @@ export default function AboutPage() {
               {COMPANY.phone}
             </a>
           </p>
+          <p className="mt-3">
+            Email:{" "}
+            <a href={COMPANY.emailHref} className="underline break-all">
+              {COMPANY.email}
+            </a>
+          </p>
         </div>
         <div>
           <h2 className="display text-3xl">Get in touch</h2>
           <p className="mt-4 leading-relaxed">
-            We do not publish an email address. Call the number above with questions about a piece,
-            a bulk order, or an existing checkout request. We will call you back on the number you
-            leave at checkout.
+            Call or email with questions about a piece, a bulk order, or an existing checkout
+            request. We reply on the phone number or email you leave at checkout.
           </p>
         </div>
       </section>

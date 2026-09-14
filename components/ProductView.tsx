@@ -85,7 +85,8 @@ export function ProductView({ product }: { product: Product }) {
             </button>
           </div>
           <p className="mt-4 text-sm text-brown-soft">
-            First-order code {COMPANY.promoCode} takes 10% off at checkout. Orders are confirmed by phone.
+            First-order code {COMPANY.promoCode} takes 10% off at checkout. Orders are confirmed by
+            phone or email.
           </p>
 
           <details className="mt-8 border-t border-brown/15 py-4" open>
@@ -118,8 +119,9 @@ export function ProductView({ product }: { product: Product }) {
           <details className="border-t border-b border-brown/15 py-4">
             <summary className="font-bold cursor-pointer">Shipping & Delivery</summary>
             <p className="mt-3 leading-relaxed">
-              Free tracked shipping on all orders. After you submit checkout, we call {COMPANY.phone} or the
-              number you provide to confirm stock, address, and payment.
+              Free tracked shipping on all orders. After you submit checkout, we call or email{" "}
+              {COMPANY.phone}, {COMPANY.email}, or the contact you provide to confirm stock, address,
+              and payment.
             </p>
           </details>
         </div>
