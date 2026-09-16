@@ -11,4 +11,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Live site: [https://kaijuonline.com](https://kaijuonline.com)
 
-Checkout is a request form. Orders are confirmed by phone at **+852 96915375** or email **kinopayment@outlook.com**. First-order code: `WELCOME10`.
+Checkout is a request form. Orders are confirmed by phone at **+852 96915375** or email **support@kaijuonline.com**. First-order code: `WELCOME10`.
