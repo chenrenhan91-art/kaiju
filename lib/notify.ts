@@ -3,7 +3,7 @@ import { money } from "./format";
 import type { OrderRecord } from "./types";
 
 export function companyMailto(subject: string, body: string): string {
-  return `${COMPANY.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${COMPANY.inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export function orderMailto(order: OrderRecord) {

@@ -13,7 +13,7 @@ export default function BulkOrderPage() {
       <h1 className="display text-4xl md:text-5xl">Bulk Order Inquiry</h1>
       <p className="mt-4 leading-relaxed">
         For wholesale, hospitality, or gift programs, tell us what you need. Submitting opens your
-        email app with a message already addressed to{" "}
+        email app so you can write to{" "}
         <a href={COMPANY.emailHref} className="underline break-all">
           {COMPANY.email}
         </a>
