@@ -4,8 +4,8 @@ export const COMPANY = {
   phone: "+852 96915375",
   phoneHref: "tel:+85296915375",
   email: "support@kaijuonline.com",
-  inbox: "kinopayment@outlook.com",
-  emailHref: "mailto:kinopayment@outlook.com",
+  inbox: "goldenflying@vanxpay.com",
+  emailHref: "mailto:support@kaijuonline.com",
   addressLines: [
     "RM F18, WORKSHOP 8, 11/F, WALNUT 9",
     "9 WALNUT STREET",
